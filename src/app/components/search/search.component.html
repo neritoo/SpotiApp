@@ -1,0 +1,15 @@
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <input #txtBuscar type="text" (keyup)="buscar(txtBuscar.value)" class="form-control" placeholder="Buscar artista...">
+        </div>
+    </div>
+    <app-loading *ngIf="loading"></app-loading>
+    <app-tarjetas *ngIf="!loading" [items]='artistas'></app-tarjetas>
+
+    <div *ngIf="!artist" class="container m-3">
+        <hr>
+        <h1>No se encontraron resultados de la búsqueda</h1>
+    </div>
+
+</div>
